@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate } from "react-router-dom";
 import { Routes, Route, NavLink } from "react-router-dom";
 import { routes } from "./routes";
+import {Login} from '../pages/Login';
 
 export const Navigation = () => {
     
@@ -11,9 +12,9 @@ export const Navigation = () => {
 
                     <nav className='flex-col items-center justify-center drop-shadow-sm'>
 
-                        <div className="w-full flex justify-end items-center bg-slate-50 pt-5 shadow">
+                        <div className="w-full flex justify-end items-center bg-slate-50 pt-5 shadow rounded-lg">
                             <div className="flex p-5 " >
-                                <NavLink className='border rounded-xl px-6 py-3' to="">
+                                <NavLink className='border rounded-xl px-6 py-3' to="/inicio-de-sesion">
                                     Iniciar sesion
                                 </NavLink>
                                 <NavLink className='px-6 py-3' to="">
@@ -47,7 +48,7 @@ export const Navigation = () => {
                         </div>
                     </nav>
                     
-                    <div className="w-full"> 
+                    <div className="w-full h-screen fondo rounded-xl"> 
 
                         <Routes>
                                 
@@ -60,6 +61,7 @@ export const Navigation = () => {
                                     )
                                 })}
                                 
+                                <Route path="/inicio-de-sesion" element={<Login/>}/>
                                 <Route path="/*" element={<Navigate to={routes[0].to} replace/>}/>
 
                         </Routes>

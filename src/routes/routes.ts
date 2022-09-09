@@ -2,6 +2,7 @@ import { lazy, LazyExoticComponent } from 'react';
 import {CatalogoPropiedades} from '../pages/CatalogoPropiedades';
 import {Inicio} from '../pages/Inicio';
 
+
 type JSXComponent = () => JSX.Element;
 
 interface Route{
@@ -31,5 +32,6 @@ export const routes:Route[] = [
         path: '/propiedades/',
         Component: CatalogoPropiedades,
         name: 'Propiedades'
-    }
+    },
+    
 ]
