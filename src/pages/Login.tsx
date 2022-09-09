@@ -1,25 +1,23 @@
-import React, { useEffect } from 'react'
+import useFetch from '../hooks/UseFetch';
 
 const API_URL = "http://localhost:3001/auth/login";
 
 
 export const Login = () => {
 
-  async function login(){
+    const dataCurso = useFetch(API_URL);
+    console.log(dataCurso.data)
+    if(dataCurso.state === "loading" || dataCurso.state === "idle"){
+        return <>cargando...</>;
+    }
 
-    const personal = await fetch(API_URL)
-    .then(response => response.json())
-    .then(data =>(console.log(data)));
-    
-    return personal;
-  }
+    if(dataCurso.state === "error" || !dataCurso.data){
+        return <>Error</>;
+    }
 
-  useEffect(()=>{
-    login();
-  },[]);
   return (
-    <div>
-      
-    </div>
+    <>
+       <h2>Hola</h2>
+    </>
   )
 }
