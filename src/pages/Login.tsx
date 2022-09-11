@@ -3,11 +3,6 @@ import { NavLink } from 'react-router-dom';
 // import useFetch from '../hooks/UseFetch';
 // const API_URL = "http://localhost:3001/auth/login";
 
-interface Usuario {
-  email:string;
-  password:string;
-}
-
 export const Login = () => {
   
   const [errores, setErrores] = useState(false);
@@ -47,10 +42,8 @@ export const Login = () => {
                 ¿Olvidaste tú contraseña?
               </NavLink>
             </div>
-
-
        
-              <input type="submit" value="Ingresar" className="bg-indigo-800 rounded-lg shadow pb-5 py-4 px-10 text-white hover:bg-indigo-500 cursor-pointer"/>
+            <input type="submit" value="Ingresar" className="bg-indigo-800 rounded-lg shadow pb-5 py-4 px-10 text-white hover:bg-indigo-500 cursor-pointer"/>
 
           </form>
       </div>
