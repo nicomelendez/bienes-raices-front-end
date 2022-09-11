@@ -24,8 +24,7 @@ export default function useFetch(url:string){
                     state:"loading"
                 }));
 
-                const response = await fetch(url);
-                console.log(response);
+                const response = await fetch(url);                
                 
                 if(response.ok){
                     const json = await response.json();

@@ -1,6 +1,5 @@
 import { lazy, LazyExoticComponent } from 'react';
-import {CatalogoPropiedades} from '../pages/CatalogoPropiedades';
-import {Inicio} from '../pages/Inicio';
+import {Inicio, CambiarContraseña, GestionUsuarios, Login, CatalogoPropiedades, RegistrarUsuario} from '../pages'
 
 
 type JSXComponent = () => JSX.Element;
@@ -33,5 +32,16 @@ export const routes:Route[] = [
         Component: CatalogoPropiedades,
         name: 'Propiedades'
     },
-    
+    {
+        to:'/olvide-contrasenia',
+        path: '/olvide-contrasenia',
+        Component: CambiarContraseña,
+        name: '¿Olvidaste tu contraseña?'
+    },
+    {
+        to: '/registrar',
+        path: 'registrar',
+        Component: RegistrarUsuario,
+        name: '¿No tienes cuenta?, registrate aquí'
+    }
 ]
