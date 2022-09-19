@@ -1,27 +1,21 @@
-import {FormEvent, useState} from 'react'
+import { useState} from 'react'
 import { NavLink } from 'react-router-dom';
+import { iniciarSesion } from './metodos/iniciarSesion';
 // import useFetch from '../hooks/UseFetch';
 // const API_URL = "http://localhost:3001/auth/login";
 
 export const Login = () => {
-  
-  const [errores, setErrores] = useState(false);
- 
-  const iniciarSesion = (e:any) => {
-    
-    e.preventDefault();
-    
-    
-  }
 
+  const [peticion, setPeticion] = useState({});
+ 
   return (
       <div>
           <div className='w-full  text-center text-4xl py-5'>
           <h2>Inicio de sesión</h2>
-          {errores ? (<>Hubo errores</>) : (<></>)}
+          {/* {errores ? (<>Hubo errores</>) : (<></>)} */}
 
           </div>
-          <form onSubmit={iniciarSesion} className='w-1/2 mx-auto rounded-lg shadow bg-slate-50 py-4 px-8 flex-col text-center space-y-7'>
+          <form onSubmit={(e:React.FormEvent<HTMLFormElement>)=>{iniciarSesion(e)}} className='w-1/2 mx-auto rounded-lg shadow bg-slate-50 py-4 px-8 flex-col text-center space-y-7'>
 
             <div className=''>
               <label className='text-xl font-semibold'>E-mail:</label><br></br>
